@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Acopio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Paul Goodman">
+
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	      google.load("visualization", "1", {packages:["corechart"]});
+	</script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="./scripts/interactivity.js"></script>
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/aco_style.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
+	<script src="scripts/settings.js"></script>
+    <style type="text/css">
+      body {
+        padding-top: 50px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 0px 0;
+      }
+    </style>
+ <!--   <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet"> -->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">acopio <span>movil</span></a>
+          <div class="nav-collapse">
+            <ul class="nav">
+	          <li><a href="#about">New Receipt</a></li>
+              <li><a href="#contact">View Receipts</a></li>
+              <li class="active"><a href="#">Data</a></li>
+			  <li><a href="#help">Help</a></li>
+            </ul>
+            <p class="navbar-text pull-right">Logged in as <a href="#">Juan Carlos Soto</a></p>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Navigation</li>
+              <li class="active"><a href="#"><i class="icon-home"></i> Most Recent Data</a></li>
+              		<li><a href="#month"><i class="icon-calendar"></i> View Data by Month</li>
+              <li class="nav-header">Options</li>
+                  <li><a href="#"><i class="icon-share-alt"></i> Export to PDF</a></li>
+                  <li><a href="#"><i class="icon-print"></i> Print</a></li>
+                  <li><a href="#"><i class="icon-envelope"></i> E-mail</a></li>
+              <li id="settings"><a href="#"><i class="icon-cog"></i> Dashboard Settings</a></li>
+            </ul>
+
+
+			<ul id="settings-detail" class="nav nav-list">
+              <li class="nav-header">Today</li>
+              <li>Our Target is to Collect <input id="kgPerDayAvg" class="input3"></input> kg a day</li>
+			  <li>but <input id="kgPerDayLow" class="input3"></input> kg is less acceptable</li>
+			  <li>Process <input id="transactionsPerDay" class="input3"></input> transactions/day</li>
+			  <li>Humidity between <input id="humidityMax" class="input2">%</input> and <input id="humidityMin" class="input2">%</li>
+			  <li class="nav-header">Monthly</li>
+			  <li>Collect <input id="kgPerMonth" class="input5"></input> kg per month</li>
+			  <li>Process <input id="transactionsPerMonth" class="input5"></input> transactions per month</li>
+		      <li><a id="setDefaults"><i class="icon-cog"></i>Revert to Defaults</a></li>
+            </ul>
+
+
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+			<div class="well">
+
+			<div class="row-fluid">
+						<h1 class="">Today's Data</h1><br>
+				<div class="span3">
+					<div class="thumbnail" id="kgPerDayContainer">
+					<h1> <span id="kgPerDayRecorded">504</span> kg</h1>
+					<p>total amount of coffee collected</p>
+					</div>
+				</div>
+				<div class="span3">
+					<div class="thumbnail">
+					<h1 id="">303 kg</h1>
+					<p>collected at Matagalpa</p>
+					</div>	
+				</div>		
+				<div class="span3">
+					<div class="thumbnail">
+					<h1 id="">201 kg</h1>
+					<p>collected at Wibuse</p>
+					</div>
+				</div>
+				</div><!-- closes this row of data -->
+				<div class="row-fluid"><br>
+						<div class="span3">
+							<div class="thumbnail" id="transactionsPerDayContainer">
+								<h1 id="transactionsPerDayRecorded">47</h1>
+								<p>transactions logged</p>
+							</div>
+						</div>
+						<div class="span3">
+							<div class="thumbnail">
+								<h1 id="">14h00-15h00</h1>
+								<p>busiest time of the day</p>
+							</div>
+						</div>
+						<div class="span3">
+							<div class="thumbnail" id="humidityContainer">
+								<h1><span id="humidityRecorded">11</span>%</h1>
+								<p>avg humidity of coffee</p>
+							</div>
+						</div>
+
+
+			</div><!-- close this row of data -->
+			</div>
+<a name="month"></a>
+<div class="well">
+<div class="row-fluid">
+	<div class="row-fluid">
+	<div class="span8">
+			<h1 class="monthName">February 2012</h1><br>
+	</div>
+	</div>
+
+	<div class="span3"><h4 style="margin-bottom:10px">Select a month:</h4>
+	<li id="month-select">
+		<select id="month">
+			<option>February 2012</option>
+			<option>January 2012</option>
+			<option>December 2011</option>
+			<option>November 2011</option>
+			<option>October 2011</option>
+		</select>
+	</li>
+	</div>
+	</div>
+
+	<div class="row-fluid">
+	<div class="span3">
+		<div class="thumbnail" id="kgPerMonthContainer">
+		<h1 id="total"><span id="kgPerMonthRecorded">12704</span> kg</h1>
+		<p>total amount of coffee collected</p>
+		</div>
+	</div>
+	<div class="span3">
+		<div class="thumbnail">
+		<h1 id="matagalpaTotal">300 kg</h1>
+		<p>collected at Matagalpa</p>
+		</div>	
+	</div>		
+	<div class="span3">
+		<div class="thumbnail">
+		<h1 id="wibuseTotal">200 kg</h1>
+		<p>collected at Wibuse</p>
+		</div>
+	</div>
+	</div><!-- closes this row of data -->
+	<div class="row-fluid"><br>
+			<div class="span3">
+				<div class="thumbnail" id="transactionsPerMonthContainer">
+					<h1 id="transactionsPerMonthRecorded">47</h1>
+					<p>transactions logged</p>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="thumbnail">
+					<h1 id="busyTime">14h00-15h00</h1>
+					<p>busiest time of the day</p>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="thumbnail" id="humidityPerMonthContainer">
+					<h1 id="humidity"><span id="humidityPerMonthRecorded">11</span>%</h1>
+					<p>avg humidity of coffee</p>
+				</div>
+			</div>
+
+
+</div><!-- close this row of data -->
+<!-- </div> -->
+<!-- <div class="well"> -->
+	<!-- <div class="row-fluid">
+		<br><h1>Data from the past 14 days</h1><br>
+	</div> -->
+	<div class="row-fluid">	
+	<ul class="thumbnails">
+	  <li class="span4">
+	   
+	
+	 <div class="thumbnail">
+		<!--
+	      <img src="http://chart.apis.google.com/chart?chxl=1:|1|2|3|4|5|6|7|8|9|10|11|12|13|14&chxp=1,0,1,2,3,4,5,6,7,8,9,10,11,12,13&chxr=0,-1.667,450|1,0,14&chxs=1,676767,10.833,0,lt,676767&chxt=y,x&chs=280x225&cht=lc&chco=599B9B&chds=10,600&chd=t:150,250,200,300,270,445,450,350,300,400,370,245,345,275&chg=14.3,-1,1,1&chls=2,4,0&chm=B,7E9B9BEB,0,0,0" alt="">-->
+		 <div id="chart_div" style="width: 100%; height: 100%;"></div>
+	      <h5><br>Total Coffee Collection By Day <i class="icon-question-sign"></i></h5>
+	      <p><span class="monthName"</span></p>
+	    </div>
+	  </li>
+
+	
+	
+	
+	  <li class="span4">
+	    <div class="thumbnail">
+	   <!--   <img src="http://chart.apis.google.com/chart?chxl=1:|JB|JC|BB|RJ&chxp=1,10,36,62,88&chxr=0,0,43.333|1,-1.667,100&chxs=0,676767,11.5,0,lt,676767&chxt=y,x&chbh=a&chs=260x225&cht=bvg&chco=599B9B,599B9B7F&chds=1.667,53.333,0,55&chd=t:50,20|22,44&chma=|3,6" alt=""> -->
+	      <div id="chart2_div" style="width: 100%; height: 100%;"></div>
+			<h5><br>Intake by Employee (transactions) <i class="icon-question-sign"></i></h5>
+	      <p><span class="monthName"</span></p>
+	    </div>
+	  </li>
+	  <li class="span2">
+	    <!-- <div class="thumbnail">
+	      <img src="http://chart.apis.google.com/chart?cht=lc&chd=s:pqokeYONOMEBAKPOQVTXZdecaZcglprqxuux393ztpoonkeggjp&chco=599b9b&chls=4.0,3.0,0.0&chs=200x125&chxt=x,y&chxl=0:|Week 1|Week 2|Week 3|1:||20|30|40|50&chf=bg,s,efefef" alt="">
+	      <h5>Interesting Subtitle <i class="icon-question-sign"></i></h5>
+	      <p>Month of October</p>
+	    </div> -->
+	  </li>
+	  <li class="span2">
+	    <!-- <div class="thumbnail">
+	      <img src="http://chart.apis.google.com/chart?cht=lc&chd=s:pqokeYONOMEBAKPOQVTXZdecaZcglprqxuux393ztpoonkeggjp&chco=599b9b&chls=4.0,3.0,0.0&chs=200x125&chxt=x,y&chxl=0:|Jun|July|Aug|1:||20|30|40|50&chf=bg,s,efefef" alt="">
+	      <h5>Interesting Subtitle <i class="icon-question-sign"></i></h5>
+	      <p>Month of October</p>
+	    </div> -->
+	  </li>
+	  <li class="span2">
+	    <!-- <div class="thumbnail">
+	      <img src="http://chart.apis.google.com/chart?cht=lc&chd=s:pqokeYONOMEBAKPOQVTXZdecaZcglprqxuux393ztpoonkeggjp&chco=599b9b&chls=4.0,3.0,0.0&chs=200x125&chxt=x,y&chxl=0:|Jun|July|Aug|1:||20|30|40|50&chf=bg,s,efefef" alt="">
+	      <h5>Interesting Subtitle <i class="icon-question-sign"></i></h5>
+	      <p>Month of October</p>
+	    </div> -->
+	  </li>
+	  <li class="span2">
+	    <!-- <div class="thumbnail">
+	   	      <img src="http://chart.apis.google.com/chart?cht=lc&chd=s:pqokeYONOMEBAKPOQVTXZdecaZcglprqxuux393ztpoonkeggjp&chco=599b9b&chls=4.0,3.0,0.0&chs=200x125&chxt=x,y&chxl=0:|Jun|July|Aug|1:||20|30|40|50&chf=bg,s,efefef" alt="">
+	   	      <h5>Interesting Subtitle <i class="icon-question-sign"></i></h5>
+	   	      <p>Month of October</p>
+	   	    </div> -->
+	  </li>
+	</ul>
+</div><!-- knocks heading boxes out of well -->
+
+  </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Acopio 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+-->
+  </body>
+</html>
