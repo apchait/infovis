@@ -83,7 +83,7 @@ $(document).ready(function(){
 				"total": '12704',
 				"locations": {"Wibuse": 4530, "Matagalpa": 8174},
 				"humidity": 11,
-				"busyTime": '14h00-15h00',
+				"busyTime": '14h00',
 				"numTransactions": 50
 			},
 			"January 2012": {
@@ -94,7 +94,7 @@ $(document).ready(function(){
 				"total": '14307',
 				"locations": {"Wibuse": 4934, "Matagalpa": 9373},
 				"humidity": 11,
-				"busyTime": '10h00-11h00',
+				"busyTime": '10h00',
 				"numTransactions": 51
 			},
 			"December 2011": {
@@ -105,7 +105,7 @@ $(document).ready(function(){
 				"total": '13874',
 				"locations": {"Wibuse": 3952, "Matagalpa": 9922},
 				"humidity": 12,
-				"busyTime": '09h30-10h30',
+				"busyTime": '09h30',
 				"numTransactions": 41
 			},
 			"November 2011": {
@@ -116,7 +116,7 @@ $(document).ready(function(){
 				"total": '13019',
 				"locations": {"Wibuse": 3523, "Matagalpa": 9496},
 				"humidity": 10,
-				"busyTime": '11h00-12h00',
+				"busyTime": '11h00',
 				"numTransactions": 38
 			},
 			"October 2011": {
@@ -127,7 +127,7 @@ $(document).ready(function(){
 				"total": '15305',
 				"locations": {"Wibuse": 4643, "Matagalpa": 10662},
 				"humidity": 11,
-				"busyTime": '15h00-16h00',
+				"busyTime": '15h00',
 				"numTransactions": 57
 			}
 		}
