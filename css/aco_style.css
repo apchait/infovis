@@ -179,7 +179,8 @@ h1 {
 }
 
 .red{
-	border-bottom-color:#A64B4B;
+	/*border-bottom-color:#A64B4B;*/
+	border-bottom-color:#FF4B4B;
 }
 
 .yellow{
@@ -187,5 +188,6 @@ h1 {
 }
 
 .green{
-	border-bottom-color:#387C7C;
+	/*border-bottom-color:#387C7C;*/
+	border-bottom-color:#3cb371;
 }

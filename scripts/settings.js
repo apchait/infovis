@@ -25,7 +25,7 @@ $(document).ready(function(){
 		"transactionsPerDay": 100, 
 		"humidityMax": 14, 
 		"humidityMin": 11, 
-		"kgPerMonth": 11000,
+		"kgPerMonth": 900,
 		"transactionsPerMonth": 3000
 	};
 	
