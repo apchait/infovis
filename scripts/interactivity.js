@@ -69,10 +69,10 @@ $(document).ready(function(){
 				["Angel R", 60]
 			],
 			"September 2011": [
-				["Augustin R", 46],
-				["Paulina G", 35],
-				["Jesus D", 38],
-				["Angel R", 60]
+				["Augustin R", 10],
+				["Paulina G", 2],
+				["Jesus D", 30],
+				["Angel R", 15]
 			]
 		}
 		return producerData;
