@@ -38,7 +38,7 @@ $(document).ready(function(){
 	
 	function createProducerData(){
 		producerData = {
-			"February 2012": [
+/*			"February 2012": [
 				["Augustin R", 45],
 				["Paulina G", 32],
 				["Jesus D", 38],
@@ -49,7 +49,7 @@ $(document).ready(function(){
 				["Paulina G", 38],
 				["Jesus D", 37],
 				["Angel R", 46]
-			],
+			],*/
 			"December 2011": [
 				["Augustin R", 40],
 				["Paulina G", 35],
@@ -63,6 +63,12 @@ $(document).ready(function(){
 				["Angel R", 55]
 			],
 			"October 2011": [
+				["Augustin R", 46],
+				["Paulina G", 35],
+				["Jesus D", 38],
+				["Angel R", 60]
+			],
+			"September 2011": [
 				["Augustin R", 46],
 				["Paulina G", 35],
 				["Jesus D", 38],
@@ -104,7 +110,7 @@ $(document).ready(function(){
 				"name": "November 2011", 
 				"days": [239,472,621,303,250,658,339,556,374,545,646,208,542,610,516,298,283,380,331,218,597,222,287,612,297,270,641,372,640,692],
 				"average" : 443,
-				"total": '909.22',
+				"total": '943.37',
 				"locations": {"Wibuse": 3523, "Matagalpa": 9496},
 				"humidity": 10,
 				"busyTime": '11h00',
@@ -116,7 +122,7 @@ $(document).ready(function(){
 				"name": "December 2011", 
 				"days": [208,566,633,509,642,692,203,264,285,432,568,593,520,521,217,253,582,634,600,246,407,464,544,549,220,487,303,390,443,317,582],
 				"average" : 447,
-				"total": '13874',
+				"total": '909.22',
 				"locations": {"Wibuse": 3952, "Matagalpa": 9922},
 				"humidity": 12,
 				"busyTime": '09h30',
@@ -133,13 +139,13 @@ $(document).ready(function(){
 		// Change month name
 		$(".monthName").html(monthData.name);		
 		// Change total
-		$("#total").html("<span id='kgPerMonthRecorded'>" + monthData.total + '</span> kg');
+		$("#total").html("<span id='kgPerMonthRecorded'>" + monthData.total + '</span> qq');
 		$("#matagalpaTotal").html(monthData.locations.Matagalpa + ' kg');
 		$("#wibuseTotal").html(monthData.locations.Wibuse + ' kg');
 		// Set second row of dash
 		$("#humidity").html(monthData.humidity + "%");
 		$("#busyTime").html(monthData.busyTime);
-		$("#numTransactions").html(monthData.numTransactions);
+		$("#transactionsPerMonthRecorded").html(monthData.numTransactions);
 		
 		// create day,kg pairs for chart 1
 		dayList = [];
@@ -157,7 +163,7 @@ $(document).ready(function(){
 	}
 	
 	// Call it on load to set up for Feb
-	filterByDate("February 2012");
+	filterByDate("December 2011");
 	function drawCharts() {
 		chart.draw(data, options);
 		chart2.draw(data_chart2, options_chart2);
