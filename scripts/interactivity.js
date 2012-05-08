@@ -72,30 +72,44 @@ $(document).ready(function(){
 		return producerData;
 	}
 	var producerData = createProducerData();
-		
+	
 	function createData(){
 		coffeeData = {
-			"February 2012": {
-				"abrv": "Feb",
-				"name": "February 2012", 
+			"September 2011": {
+				"abrv": "Sep",
+				"name": "September 2011", 
 				"days": [576,556,220,395,463,420,555,677,253,452,465,379,608,509,467,459,512,526,451,489,301,273,461,373,397,535,376,556],
 				"average": 454,
-				"total": '12704',
+				"total": '7.22',
 				"locations": {"Wibuse": 4530, "Matagalpa": 8174},
 				"humidity": 11,
 				"busyTime": '14h00',
-				"numTransactions": 50
+				"numTransactions": 7,
+				"avgPrice": 2219.29
 			},
-			"January 2012": {
-				"abrv": "Jan",
-				"name": "January 2012", 
+			"October 2011": {
+				"abrv": "Oct",
+				"name": "October 2011", 
 				"days": [258,584,499,287,402,562,471,317,405,359,544,236,626,498,425,272,510,557,392,361,644,662,442,469,677,260,575,550,571,315,577],
 				"average" : 461,
-				"total": '14307',
+				"total": '521.46',
 				"locations": {"Wibuse": 4934, "Matagalpa": 9373},
 				"humidity": 11,
 				"busyTime": '10h00',
-				"numTransactions": 51
+				"numTransactions": 152,
+				"avgPrice": 2230.39
+			},
+			"November 2011": {
+				"abrv": "Nov",
+				"name": "November 2011", 
+				"days": [239,472,621,303,250,658,339,556,374,545,646,208,542,610,516,298,283,380,331,218,597,222,287,612,297,270,641,372,640,692],
+				"average" : 443,
+				"total": '909.22',
+				"locations": {"Wibuse": 3523, "Matagalpa": 9496},
+				"humidity": 10,
+				"busyTime": '11h00',
+				"numTransactions": 214,
+				"avgPrice": 2275.56
 			},
 			"December 2011": {
 				"abrv": "Dec",
@@ -106,29 +120,8 @@ $(document).ready(function(){
 				"locations": {"Wibuse": 3952, "Matagalpa": 9922},
 				"humidity": 12,
 				"busyTime": '09h30',
-				"numTransactions": 41
-			},
-			"November 2011": {
-				"abrv": "Nov",
-				"name": "November 2011", 
-				"days": [239,472,621,303,250,658,339,556,374,545,646,208,542,610,516,298,283,380,331,218,597,222,287,612,297,270,641,372,640,692],
-				"average" : 443,
-				"total": '13019',
-				"locations": {"Wibuse": 3523, "Matagalpa": 9496},
-				"humidity": 10,
-				"busyTime": '11h00',
-				"numTransactions": 38
-			},
-			"October 2011": {
-				"abrv": "Oct",
-				"name": "October 2011", 
-				"days": [400,630,533,355,691,398,361,422,536,443,395,485,297,333,326,458,361,492,344,520,610,688,559,579,444,573,471,654,688,612,647],
-				"average" : 493,
-				"total": '15305',
-				"locations": {"Wibuse": 4643, "Matagalpa": 10662},
-				"humidity": 11,
-				"busyTime": '15h00',
-				"numTransactions": 57
+				"numTransactions": 246,
+				"avgPrice": 2217.97
 			}
 		}
 		return coffeeData;
