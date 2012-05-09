@@ -5,7 +5,19 @@
 	<script type="text/javascript" src="./scripts/data.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		$(document).ready(function(){
-			console.log(data);
+			var count = {};
+			$.each(data,function(i,tr){
+				month = tr.tr_date;
+				if (count[month]){
+					count[month] += tr.tr_net_weight;
+				}
+				else{
+					count[month] = tr.tr_net_weight;
+				}
+			});
+			$.each(count,function(i,tr){
+				console.log(i, tr);
+			});
 		})
 	</script>
 </head>
