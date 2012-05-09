@@ -98,8 +98,9 @@ $(document).ready(function(){
 		}
 		
 		
-		transactionsPerMonth = $("#transactionsPerMonthRecorded");
-		if (Number(transactionsPerDay) > Number(localStorage["transactionsPerMonth"])){
+		transactionsPerMonth = $("#transactionsPerMonthRecorded").html();
+		console.log(transactionsPerMonth);
+		if (Number(transactionsPerMonth) > Number(localStorage["transactionsPerMonth"])){
 			$("#transactionsPerMonthContainer").removeClass("red");
 			$("#transactionsPerMonthContainer").addClass("green");
 		}
