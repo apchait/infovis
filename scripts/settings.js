@@ -22,7 +22,7 @@ $(document).ready(function(){
 	var defaults = {
 		"kgPerDayAvg": 510,
 		"kgPerDayLow": 430,
-		"transactionsPerDay": 100, 
+		"transactionsPerDay": 20, 
 		"humidityMax": 14, 
 		"humidityMin": 11, 
 		"kgPerMonth": 900,
