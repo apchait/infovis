@@ -108,7 +108,8 @@ $(document).ready(function(){
 			$("#transactionsPerMonthContainer").addClass("red");
 		}
 		
-		humidityPerMonth = $("#humidityPerMonthRecoreded");
+		humidityPerMonth = $("#humidityPerMonthRecorded").html();
+		console.log(humidityPerMonth);
 		if (Number(humidityPerMonth) > Number(localStorage["humidityMax"]) || Number(humidityPerMonth) < Number(localStorage["humidityMin"])){
 			$("#humidityPerMonthContainer").removeClass("green");
 			$("#humidityPerMonthContainer").addClass("red");

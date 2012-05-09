@@ -143,7 +143,7 @@ $(document).ready(function(){
 		$("#matagalpaTotal").html(monthData.locations.Matagalpa + ' kg');
 		$("#wibuseTotal").html(monthData.locations.Wibuse + ' kg');
 		// Set second row of dash
-		$("#humidity").html(monthData.humidity + "%");
+		$("#humidityPerMonthRecorded").html(monthData.humidity);
 		$("#busyTime").html(monthData.busyTime);
 		$("#transactionsPerMonthRecorded").html(monthData.numTransactions);
 		
