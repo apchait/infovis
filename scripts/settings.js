@@ -16,6 +16,7 @@ $(document).ready(function(){
 			localStorage[key] = value;
 			$("#"+key).val(localStorage[key]);
 		});
+		setColorsOnDashboard();
 	});
 	
 	// Defualt settings
