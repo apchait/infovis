@@ -38,18 +38,6 @@ $(document).ready(function(){
 	
 	function createProducerData(){
 		producerData = {
-/*			"February 2012": [
-				["Augustin R", 45],
-				["Paulina G", 32],
-				["Jesus D", 38],
-				["Angel R", 50]
-			],
-			"January 2012": [
-				["Augustin R", 35],
-				["Paulina G", 38],
-				["Jesus D", 37],
-				["Angel R", 46]
-			],*/
 			"December 2011": [
 				["Augustin R", 40],
 				["Paulina G", 35],
@@ -146,6 +134,7 @@ $(document).ready(function(){
 		$("#humidityPerMonthRecorded").html(monthData.humidity);
 		$("#busyTime").html(monthData.busyTime);
 		$("#transactionsPerMonthRecorded").html(monthData.numTransactions);
+		$("#avgPrice").html(monthData.avgPrice);
 		
 		// create day,kg pairs for chart 1
 		dayList = [];
